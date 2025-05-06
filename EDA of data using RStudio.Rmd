@@ -1,0 +1,153 @@
+---
+title: "DAB_501_Project 3"
+author: "Manish Kataria (W0865937)"
+date: "2024-07-28"
+output: html_document
+---
+```{r}
+data <- read.csv("C:/Users/manis/Desktop/DAB_501_tabacoo.csv", header = TRUE)
+```
+
+```{r}
+str(data)
+```
+
+```{r}
+mean(data$Ever.tobacco.users....)
+mean(data$Current.tobacco.users....)
+mean(data$Ever.cigarette.users....)
+mean(data$Current.cigarette.users....)
+mean(data$Median.age.of.initiation.of.Cigarette..in.years.)
+mean(data$Ever.tobacco.smokers.who.quit.in.last.12.months....)
+mean(data$Current.tobacco.smokers.who.tried.to.quit.smoking.in.the.past.12.months....)
+mean(data$Current.tobacco.smokers.who.wanted.to.quit.smoking.now......)
+```
+
+```{r}
+min(data$Ever.tobacco.users....)
+min(data$Current.tobacco.users....)
+min(data$Ever.cigarette.users....)
+min(data$Current.cigarette.users....)
+min(data$Median.age.of.initiation.of.Cigarette..in.years.)
+min(data$Ever.tobacco.smokers.who.quit.in.last.12.months....)
+min(data$Current.tobacco.smokers.who.tried.to.quit.smoking.in.the.past.12.months....)
+min(data$Current.tobacco.smokers.who.wanted.to.quit.smoking.now......)
+```
+
+```{r}
+max(data$Ever.tobacco.users....)
+max(data$Current.tobacco.users....)
+max(data$Ever.cigarette.users....)
+max(data$Current.cigarette.users....)
+max(data$Median.age.of.initiation.of.Cigarette..in.years.)
+max(data$Ever.tobacco.smokers.who.quit.in.last.12.months....)
+max(data$Current.tobacco.smokers.who.tried.to.quit.smoking.in.the.past.12.months....)
+max(data$Current.tobacco.smokers.who.wanted.to.quit.smoking.now......)
+```
+
+```{r}
+median(data$Ever.tobacco.users....)
+median(data$Current.tobacco.users....)
+median(data$Ever.cigarette.users....)
+median(data$Current.cigarette.users....)
+median(data$Median.age.of.initiation.of.Cigarette..in.years.)
+median(data$Ever.tobacco.smokers.who.quit.in.last.12.months....)
+median(data$Current.tobacco.smokers.who.tried.to.quit.smoking.in.the.past.12.months....)
+median(data$Current.tobacco.smokers.who.wanted.to.quit.smoking.now......)
+```
+
+```{r}
+mymode <- function(m){
+sort(table(m), decreasing = TRUE)[1]
+}
+```
+
+```{r}
+mymode(data$Ever.tobacco.users....)
+mymode(data$Current.tobacco.users....)
+mymode(data$Ever.cigarette.users....)
+mymode(data$Current.cigarette.users....)
+mymode(data$Median.age.of.initiation.of.Cigarette..in.years.)
+mymode(data$Ever.tobacco.smokers.who.quit.in.last.12.months....)
+mymode(data$Current.tobacco.smokers.who.tried.to.quit.smoking.in.the.past.12.months....)
+mymode(data$Current.tobacco.smokers.who.wanted.to.quit.smoking.now......)
+```
+```{r}
+mypercentile <- quantile(data$Ever.tobacco.users....)
+print(mypercentile)
+```
+
+```{r}
+mypercentile <- quantile(data$Ever.tobacco.users....)
+print(mypercentile)
+mypercentile <- quantile(data$Current.tobacco.users....)
+print(mypercentile)
+mypercentile <- quantile(data$Ever.cigarette.users....)
+print(mypercentile)
+mypercentile <- quantile(data$Current.cigarette.users....)
+print(mypercentile)
+mypercentile <- quantile(data$Median.age.of.initiation.of.Cigarette..in.years.)
+print(mypercentile)
+mypercentile <- quantile(data$Ever.tobacco.smokers.who.quit.in.last.12.months....)
+print(mypercentile)
+mypercentile <- quantile(data$Current.tobacco.smokers.who.tried.to.quit.smoking.in.the.past.12.months....)
+print(mypercentile)
+mypercentile <- quantile(data$Current.tobacco.smokers.who.wanted.to.quit.smoking.now......)
+print(mypercentile)
+
+```
+
+```{r}
+var(data$Ever.tobacco.users....)
+var(data$Current.tobacco.users....)
+var(data$Ever.cigarette.users....)
+var(data$Current.cigarette.users....)
+var(data$Median.age.of.initiation.of.Cigarette..in.years.)
+var(data$Ever.tobacco.smokers.who.quit.in.last.12.months....)
+var(data$Current.tobacco.smokers.who.tried.to.quit.smoking.in.the.past.12.months....)
+var(data$Current.tobacco.smokers.who.wanted.to.quit.smoking.now......)
+```
+
+```{r}
+sd(data$Ever.tobacco.users....)
+sd(data$Current.tobacco.users....)
+sd(data$Ever.cigarette.users....)
+sd(data$Current.cigarette.users....)
+sd(data$Median.age.of.initiation.of.Cigarette..in.years.)
+sd(data$Ever.tobacco.smokers.who.quit.in.last.12.months....)
+sd(data$Current.tobacco.smokers.who.tried.to.quit.smoking.in.the.past.12.months....)
+sd(data$Current.tobacco.smokers.who.wanted.to.quit.smoking.now......)
+```
+
+```{r}
+# Define the columns
+ col1 <- data$Ever.tobacco.users....
+ col8 <- data$Current.tobacco.users....
+ col2 <- data$Ever.cigarette.users....
+ col3 <- data$Current.cigarette.users....
+ col4 <- data$Median.age.of.initiation.of.Cigarette..in.years.
+ col5 <- data$Ever.tobacco.smokers.who.quit.in.last.12.months....
+ col6 <- data$Current.tobacco.smokers.who.tried.to.quit.smoking.in.the.past.12.months....
+ col7 <- data$Current.tobacco.smokers.who.wanted.to.quit.smoking.now......
+
+# Define a function to compute and print co covarince and correlation
+Cor_and_cov<- function(m, k, name_c1, name_c2) {
+  # Compute covarince
+  cov_value <- cov(m, k)
+  print(paste("Covarience between", name_c1, "and", name_c2, ":", cov_value))
+  
+  # Compute correlation
+  cor_value <- cor(m, k)
+  print(paste("Correlation between", name_c1, "and", name_c2, ":", cor_value))
+  print("  ")
+}
+
+
+Cor_and_cov( col1,  col2, "Ever tobacco users", "Ever cigarette users")
+Cor_and_cov( col1,  col8, "Ever tobacco users", "Current tobacco users ")
+Cor_and_cov( col1,  col3, "Ever tobacco users", "Current cigarette users")
+Cor_and_cov( col1,  col4, "Ever tobacco users", "Median age of initiation of Cigarette  in years")
+Cor_and_cov( col1,  col5, "Ever tobacco users", "Ever tobacco smokers who quit in last 12 months")
+Cor_and_cov( col1,  col6, "Ever tobacco users", "Current tobacco smokers who tried to quit smoking in the past 12 months")
+Cor_and_cov( col1,  col7, "Ever tobacco users", "Current tobacco smokers who wanted to quit smoking now")
+```
